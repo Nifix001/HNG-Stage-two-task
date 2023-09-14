@@ -2,9 +2,9 @@ import React from 'react'
 
 const Featured = () => {
   return (
-    <div>
-      
-    </div>
+    <React.Fragment>
+        
+    </React.Fragment>
   )
 }
 
