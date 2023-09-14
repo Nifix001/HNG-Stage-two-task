@@ -1,5 +1,5 @@
-import { useState } from "react"
-import { createBrowserRouter, RouterProvider, createRoutesFromElements, Route } from "react-router-dom"
+import { useEffect, useState } from "react"
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom"
 
 import Homepage from "./Pages/Homepage"
 import Movie from "./Pages/Movie"
@@ -25,15 +25,15 @@ function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route>
-        <Route index element={<Homepage/>} />
-        <Route path="/i/movies/:id" element={<Movie />}/>
+        <Route index element={<Homepage />} />
+        <Route path="/i/movies/:id" element={<Movie />} />
       </Route>
     )
   )
 
   return (
     <>
-      <RouterProvider router={router} />
+    <RouterProvider router={router} />
     </>
   )
 }
