@@ -1,10 +1,52 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from '../assets/Logo.png'
 import menu from '../assets/Menu.png'
 import play from '../assets/Play.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const Header = () => {
+const Header = ({film}) => {
+  
+  const [randomImage, setRandomImage] =useState(null)
+
+  useEffect(() => {
+    if (!randomImage && film && film.length > 0) {
+        const fetchRandomImageWithOverview = async () => {
+            try{
+              const movieBackdrops = await film.map(movie => ({
+                backdropUrl: `https://image.tmdb.org/t/p/original${film.backdrop_path}`,
+                overview: movie.overview,
+                title: movie.original_title,
+                id: movie.id
+              }));
+        
+              // Choose a random movie backdrop
+              
+              if (movieBackdrops.length === 0) {
+                  console.error('No movie backdrops available.');
+                  return;
+                }
+                
+            const randomBackdropInfo = movieBackdrops[Math.floor(Math.random() * movieBackdrops.length)];
+
+
+              console.log('Random backdrop info:', randomBackdropInfo);
+
+              if (movieBackdrops.length === 0) {
+                console.error('No movie backdrops available.');
+                return;
+            }
+        
+            // Update state with the random image and its metadata
+            setRandomImage(randomBackdropInfo);
+          } catch (error) {
+            console.error('Error fetching TMDb data:', error);
+          }
+        }
+      
+        fetchRandomImageWithOverview();
+  }
+}, [film, randomImage]); 
+
   return (
     <React.Fragment>
         <div>

@@ -2,25 +2,28 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import icon from '../assets/Icon 1.png'
 
-const Card = () => {
-  return (
+const Card = ({film}) => {
+
+  const card = film.map((e) =>(
     <React.Fragment>
+    <div>
+        <Link to={`/i/movies/${e.id}`}>
         <div>
-            <Link>
             <div>
-                <div>
-                    <img src={icon} alt="icon" />
-                    <img data-testid='movie-poster' src="" alt="movie-poster" />
-                </div>
-                <p data-testid='movie-release-date' >USA, 2023</p>
-                <h2 data-testid='movie-title'>Title</h2>
-                <span>rating</span>
-                <p>Adventure</p>
+                <img src={icon} alt="icon" />
+                <img data-testid='movie-poster' src= {`https://image.tmdb.org/t/p/original${e.poster_path}`} alt="movie-poster" />
             </div>
-            </Link>
+            <p data-testid='movie-release-date' >{e.release_date}</p>
+            <h2 data-testid='movie-title'>{e.title}</h2>
+            <span>{e.vote_average}</span>
+            <p>Adventure</p>
         </div>
-    </React.Fragment>
+        </Link>
+    </div>
+</React.Fragment>
   )
+  )
+  return (card)
 }
 
 export default Card

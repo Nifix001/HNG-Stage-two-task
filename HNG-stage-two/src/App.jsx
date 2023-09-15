@@ -30,7 +30,7 @@ function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route>
-        <Route index element={<Homepage />} />
+        <Route index element={<Homepage film={film}/>} />
         <Route path="/i/movies/:id" element={<Movie />} />
       </Route>
     )

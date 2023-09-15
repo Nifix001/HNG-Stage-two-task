@@ -3,11 +3,11 @@ import Featured from '../Components/Featured'
 import Footer from '../Components/Footer'
 import Header from '../Components/Header'
 
-const Homepage = () => {
+const Homepage = ({film}) => {
   return (
     <React.Fragment>
-        <Header />
-        <Featured />
+        <Header film={film}/>
+        <Featured film={film}/>
         <Footer />
     </React.Fragment>
   )

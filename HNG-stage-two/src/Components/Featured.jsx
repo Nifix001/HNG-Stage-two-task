@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Card from './Card'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const Featured = () => {
+const Featured = ({film}) => {
   return (
     <React.Fragment>
       <div>
@@ -11,7 +11,7 @@ const Featured = () => {
         <Link>See Link <FontAwesomeIcon icon="fa-light fa-heart" /></Link>
       </div>
       <div>
-        <Card data-testid='movie-card' />
+        <Card film={film} data-testid='movie-card' />
       </div>
     </React.Fragment>
   )
