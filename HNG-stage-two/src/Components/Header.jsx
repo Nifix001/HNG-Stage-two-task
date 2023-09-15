@@ -2,6 +2,7 @@ import React from 'react'
 import logo from '../assets/Logo.png'
 import menu from '../assets/Menu.png'
 import play from '../assets/Play.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Header = () => {
   return (
@@ -13,6 +14,7 @@ const Header = () => {
                 </div>
                 <div>
                 <input type="text" placeholder='What do you want to watch?' />
+                <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
                 </div>
                 <div>
                     <h4>Sign In</h4>
