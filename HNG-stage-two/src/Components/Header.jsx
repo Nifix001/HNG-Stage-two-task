@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Header = ({film}) => {
   
-  const [randomImage, setRandomImage] =useState(null)
+  const [randomImage, setRandomImage] =useState(null);
 
   useEffect(() => {
     if (!randomImage && film && film.length > 0) {
@@ -49,8 +49,8 @@ const Header = ({film}) => {
 
   return (
     <React.Fragment>
-        <div>
-            <nav>
+        <div className='h-screen w-full bg-cover bg-center text-white' style={{backgroundImage:`url(${randomImage?.backdropUrl})`}}>
+            <nav className='flex'>
                 <div>
                     <img src={logo} alt="" />
                 </div>

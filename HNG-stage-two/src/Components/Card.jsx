@@ -6,7 +6,7 @@ const Card = ({film}) => {
 
   const card = film.map((e) =>(
     <React.Fragment>
-    <div>
+    <div className='grid grid-cols-3'>
         <Link to={`/i/movies/${e.id}`}>
         <div>
             <div>
