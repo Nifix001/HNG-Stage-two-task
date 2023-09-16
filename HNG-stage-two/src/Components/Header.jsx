@@ -75,3 +75,4 @@ const Header = ({film}) => {
 }
 
 export default Header
+

@@ -6,12 +6,11 @@ const Card = ({film}) => {
 
   const card = film.map((e) =>(
     <React.Fragment>
-    <div className='grid grid-cols-3'>
+    <div>
         <Link to={`/i/movies/${e.id}`}>
         <div>
             <div>
-                <img src={icon} alt="icon" />
-                <img data-testid='movie-poster' src= {`https://image.tmdb.org/t/p/original${e.poster_path}`} alt="movie-poster" />
+                <img data-testid='movie-poster' src= {`https://image.tmdb.org/t/p/original${e.poster_path}`} alt="movie-poster"className='w-80' />
             </div>
             <p data-testid='movie-release-date' >{e.release_date}</p>
             <h2 data-testid='movie-title'>{e.title}</h2>
