@@ -1,10 +1,13 @@
 import React from 'react'
+import Body from '../Components/Body'
+import Navbar from '../Components/Navbar'
 
 const Movie = () => {
   return (
-    <div>
-      
-    </div>
+    <React.Fragment>
+      <Navbar />
+      <Body />
+    </React.Fragment>
   )
 }
 

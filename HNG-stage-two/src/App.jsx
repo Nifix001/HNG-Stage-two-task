@@ -7,6 +7,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
+import Error from "./Pages/Error";
 
 library.add(fas,fab, far)
 
@@ -32,6 +33,7 @@ function App() {
       <Route>
         <Route index element={<Homepage film={film}/>} />
         <Route path="/i/movies/:id" element={<Movie />} />
+        <Route path='/*' element={<Error />} />
       </Route>
     )
   )
